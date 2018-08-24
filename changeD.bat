@@ -43,7 +43,7 @@ START /B /wait platform-tools\adb.exe push build.prop /system/
 START /B /wait platform-tools\adb.exe shell mount -o ro,remount /system
 START /B /wait platform-tools\adb.exe shell chmod 644 /system
 
-Rem check if the device 
+Rem get device density and write into file 
 platform-tools\adb.exe pull /system/build.prop .\
 type build.prop | findstr ro.sf.lcd_density > density.txt
 
